@@ -1,0 +1,40 @@
+
+
+
+
+linux查看端口被哪个进程占用：netstat -lnp|grep 88
+
+===============================================================
+
+git查看log：
+	git log
+	
+git本地回退到指定版本： 
+	git reset --hard 123dc..
+	
+git远程分支回退到和本地一样的版本，此版本后的提交 全被删除：
+	git push -f -u origin master
+
+
+
+
+
+
+
+===========================================================================================
+======================================Android==============================================
+===========================================================================================
+
+
+apk打包：
+	Build -> Generate Signed Bundle / APK  -> APK
+
+生成签名文件：
+	keytool -genkey -v -keystore 签名文件名称.keystore -alias 签名文件别名 -keyalg RSA -keysize 2048 -validity 20000
+	
+生成密钥散列：
+	keytool -exportcert -alias 签名文件别名 -keystore 签名文件完整路径.keystore | openssl sha1 -binary | openssl base64
+
+apk重新签名：
+	jarsigner -verbose -keystore 证书.keystore -signedjar 新的apk名.apk 待签名文件.apk 签名证书别名
+	

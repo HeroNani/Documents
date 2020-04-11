@@ -1,0 +1,21 @@
+https://docs.activestate.com/activeperl/5.28/get/relnotes/     activePerl 的下载地址
+
+keytool -exportcert -alias w -keystore F:\OuMei_New_PingShen\2019_05_22_PocketWarrior\Key\pw.jks | openssl sha1 -binary | openssl base64
+
+
+######################################
+keytool -exportcert -alias 签名文件别名 -keystore 签名文件完整路径.keystore | openssl sha1 -binary | openssl base64
+######################################
+
+安装方法：
+1.安装ActivePerl ： http://www.activestate.com/activepython/downloads 在环境变量中配置per的bin路径到系统PATH（安装时有自动配置，选中自动配置）。
+2.下载openssl ：https://code.google.com/archive/p/openssl-for-windows/downloads 在环境变量中配置openssl的bin路径到系统PATH。
+3.进入CMD输入:keytool -exportcert -alias 签名的alias名字 -keystore keystore的名字 | openssl sha1 -binary | openssl base64
+?然后是提示输入密匙库口令：你的签名密码
+搞定！
+
+
+例子：keytool -exportcert -alias key0 -keystore D:\ready6\LsjProduct\Client\Product\Android\AndroidProject\xmwh5.keystore | openssl sha1 -binary | openssl base64
+输入密钥库口令:  xmw2019
+
+
